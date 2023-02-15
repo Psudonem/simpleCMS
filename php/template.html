@@ -1,6 +1,10 @@
 <html>
 	<head>
 		<title>simpleCMS</title>
+		<style>
+			td{text-align:left;vertical-align: top;}
+			
+		</style>
 	</head>
 	<body>
 		<table>
@@ -17,10 +21,21 @@
 							<option value ="3">Ok this is awsome</option>
 							<option value ="2">Thinking about trees</option>
 							<option value ="1">first post</option>
-						</select> 
+						</select><br>
+						<input type="submit" value="Edit" name="action">
+						<input type="submit" value="New" name="action">
 					</form>
 				</td>
-				<td>Edit Post</td>
+				<td>
+					<form>
+						<sub>id: <input type="text" value="3" disabled></sub><br>
+						
+						
+						Title<br> <input type="text"><br>
+						Text<br><textarea></textarea><br>
+					</form>
+				</td>
+				
 			</tr>
 			
 		</table>

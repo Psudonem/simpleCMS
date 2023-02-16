@@ -4,7 +4,11 @@
 	
 
 	if(isset($_REQUEST['action'])){
-		
+		if($_REQUEST['action']=="Edit"){
+			$editID = $_REQUEST['postSelect'];
+			$editTitle = $arr[$editID]['title'];
+			$editContent = $arr[$editID]['content'];
+		}
 	}
 
 ?>
@@ -44,14 +48,11 @@
 					</form>
 				</td>
 				<td>
-					<form>
-						<sub style="visibility:hidden;display:none;">id: 
-							<input type="text" value="3" name="id"></sub>
-							<br>
-						
-						
-						Title<br> <input type="text" value=""><br>
-						Text<br><textarea></textarea><br>
+					<form method="post">
+						<div style="visibility:hidden;display:box;">id: 
+							<input type="text" value="<?php     if(isset($editID))echo $editID;else echo "-1";?>" name="updateID"></div>
+						Title<br> <input type="text" name="updateTitle" value="<?php     if(isset($editID))echo $editTitle;?>"><br>
+						Text<br><textarea name="updateContent"><?php     if(isset($editID))echo $editContent;?></textarea><br>
 						<input type="submit" value="update">
 					</form>
 				</td>

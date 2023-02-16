@@ -1,3 +1,8 @@
+<?php
+	$jsonobj = '{"0":{"title":"ok"}}';
+	$var = json_decode($jsonobj);
+	print_r($var);
+?>
 <html>
 	<head>
 		<title>simpleCMS</title>

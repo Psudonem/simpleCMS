@@ -1,7 +1,12 @@
 <?php
-	$jsonobj = '{"0":{"title":"ok"}}';
-	$var = json_decode($jsonobj);
-	print_r($var);
+	$jsonobj = '{"0":{"title":"ok","content":"hey hey hey"},"1":{"title":"test","content":"this is the test post"}}';
+	$arr = json_decode($jsonobj, true);
+	
+
+	if(isset($_REQUEST['action'])){
+		
+	}
+
 ?>
 <html>
 	<head>
@@ -22,10 +27,17 @@
 				<td>
 					<form>
 						<select name="postSelect" multiple>
+							<?php
+								foreach ($arr as $key =>$value){
+									print '<option value ="'.$key.'">'.$value['title']."</option>";
+								}
+							?>
+
+							<!--
 							<option value ="4">Most Recent Post</option>
 							<option value ="3">Ok this is awsome</option>
 							<option value ="2">Thinking about trees</option>
-							<option value ="1">first post</option>
+							<option value ="1">first post</option>-->
 						</select><br>
 						<input type="submit" value="Edit" name="action">
 						<input type="submit" value="New" name="action">
@@ -38,7 +50,7 @@
 							<br>
 						
 						
-						Title<br> <input type="text"><br>
+						Title<br> <input type="text" value=""><br>
 						Text<br><textarea></textarea><br>
 						<input type="submit" value="update">
 					</form>
